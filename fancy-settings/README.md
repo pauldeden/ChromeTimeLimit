@@ -1,5 +1,5 @@
 # [Fancy Settings 1.2](https://github.com/frankkohlhepp/fancy-settings)
-*Create fancy, chrome-look-alike settings for your Chrome or Safari extension in minutes!*
+*Create fancy, chrome-look-alike settings for your Chrome or Safari extension in minutes!* 
 
 ### Howto
 Welcome to Fancy Settings! Are you ready for tabs, groups, search, good style?  
