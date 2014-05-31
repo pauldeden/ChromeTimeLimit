@@ -1,9 +1,20 @@
-var settings = new Store("settings", {
-    "sample_setting": "This is how you use Store.js to remember values"
-});
+function savePassword(password) {
+  save({'password': password}, function(){});
+}
 
-chrome.extension.onMessage.addListener(
-  function(request, sender, sendResponse) {
-  	chrome.pageAction.show(sender.tab.id);
-    sendResponse(settings.toObject());
+function getPassword(callback) {
+  get('password', callback);
+}
+
+/* generic helper functions */
+
+function get(itemStr, callback) {
+  chrome.storage.local.get(itemStr, function (items) {
+    callback(items);                            
   });
+}
+
+// savedCB is a function like function () {}
+function save(item, savedCB) {
+  chrome.storage.local.set(item, savedCB);  
+}
