@@ -1,20 +1,20 @@
-function savePassword(password) {
-  save({'password': password}, function(){});
-}
-
-function getPassword(callback) {
-  get('password', callback);
-}
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.func == "save") {
+        save(request.key, request.value);
+        sendResponse({response: "saved"});
+    } else if (request.func == "get") {
+        var response = get(request.key);
+        sendResponse({response: response});
+    }
+});
 
 /* generic helper functions */
 
-function get(itemStr, callback) {
-  chrome.storage.local.get(itemStr, function (items) {
-    callback(items);                            
-  });
+function get(key) {
+  return localStorage.getItem(key);
 }
 
-// savedCB is a function like function () {}
-function save(item, savedCB) {
-  chrome.storage.local.set(item, savedCB);  
+function save(key, value) {
+  localStorage.setItem(key, value);
 }
