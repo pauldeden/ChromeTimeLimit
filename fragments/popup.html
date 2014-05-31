@@ -10,31 +10,43 @@
             white-space: nowrap;
         }
     </style>
-    <script>
-
-    </script>
+    <script src="/scripts/util.js"></script>
+    <script src="/scripts/setup_admin.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="login_page">
+      <form id="login_form">
+      <div class="form-group">
+        <label class="control-label">Chrome Timer Password</label>
+        <div class="controls">
+          <input type="text" id="login_password" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+          <input type="submit" class="btn btn-primary" id="login_button" value="Login"/>
+      </div>
+      </form>
+    </div>
+    <div class="container" id="real_page" style="display: none">
       <h4>Chrome Timer</h4>
       <div class="form-group">
         <label class="control-label">Admin Page Password</label>
         <div class="controls">
-          <input type="text" class="form-control">
+          <input type="text" id="password" class="form-control">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label">Time until lock (in seconds)</label>
+        <label class="control-label">Time until lock (in minutes)</label>
         <div class="controls">
-              <input type="text" class="form-control">
+              <input type="text" id="timerMinutes" class="form-control">
         </div>
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox" value="true">Timer is active</label>
+          <input type="checkbox" id="active" value="true">Timer is active</label>
       </div>
       <div class="form-group">
-          <a class="btn btn-primary">Save</a>
+          <a class="btn btn-primary" id="save_button">Save</a>
       </div>
       <div class="alert alert-success" id="message" style="display: none">
         Settings saved.
