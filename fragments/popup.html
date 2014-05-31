@@ -10,27 +10,34 @@
             white-space: nowrap;
         }
     </style>
+    <script>
+
+    </script>
   </head>
   <body>
     <div class="container">
       <div class="form-group">
         <label class="control-label">Admin Page Password</label>
-        <label></label>
         <div class="controls">
           <input type="text" class="form-control">
-          <div class="form-group">
-            <label class="control-label">Time until lock (in seconds)</label>
-            <div class="controls">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Time until lock (in seconds)</label>
+        <div class="controls">
               <input type="text" class="form-control">
-            </div>
-          </div>
         </div>
       </div>
       <div class="checkbox">
         <label>
           <input type="checkbox" value="true">Timer is active</label>
       </div>
-      <a class="btn btn-primary">Save</a>
+      <div class="form-group">
+          <a class="btn btn-primary">Save</a>
+      </div>
+      <div class="alert alert-success" id="message" style="display: none">
+        Settings saved.
+      </div>
     </div>
   </body>
 </html>
